@@ -1,0 +1,8 @@
+
+
+
+.featured-items__title {
+	background: -webkit-linear-gradient(#EA1946, #6F4B9E);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
