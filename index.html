@@ -325,66 +325,7 @@
 							</div>
 						</div>
 					</section>
-	
-					<!-- <div class="content-alternating">
-					    <div class="container">
-					    	<div class="row content-alternating-block">
-					            <div class="col-md-5 content-alternating-asset">
-	                                <img src="https://www.threatstack.com/wp-content/uploads/2019/03/timeline-zoom-icon@2x-1.png" alt="" />
-					            </div>
-					            <div class="col-md-1"></div>
-					            <div class="col-md-5">
-					                <h2>Get Context to Investigate Quickly </h2>
-					                <p>Each time the Threat Stack Cloud Security Platform®  triggers an alert, you’ll get important context to help you immediately understand what happened — like who did what, where, and when.</p>
-
-					                <a href="https://www.threatstack.com/platform" target="" class="blockcta">
-					                	<span class="blockcta-asset">
-					                    	<i class="fas fa-search"></i>
-					                    </span>
-					                    <span class="blockcta-text">
-					                    	See the Platform in Action
-					                	</span>
-					                </a>
-					            </div>
-					        </div>
-					        <div class="row content-alternating-block">
-					            <div class="col-md-5 content-alternating-asset">
-					                <img src="https://www.threatstack.com/wp-content/uploads/2019/03/drive-gear-icon@2x-1.png" alt="" />
-					            </div>
-					            <div class="col-md-1"></div>
-					            <div class="col-md-5">
-					                <h2>Build Security Orchestration Workflows </h2>
-					                <p>Threat Stack’s flexible APIs let you send alerts and data to your tool chain — so you can automate incident response in a way that fits your team. </p>
-					                <a href="https://resources.threatstack.com/datasheets/data-portability" target="" class="blockcta">
-					                	<span class="blockcta-asset">
-					                    	<i class="fas fa-search"></i>
-					                    </span>
-					                    <span class="blockcta-text">
-					                    	See Our API
-					                    </span>
-					                </a>
-					            </div>
-					        </div>
-			                <div class="row content-alternating-block">
-				            	<div class="col-md-5 content-alternating-asset">
-	                                <img src="https://www.threatstack.com/wp-content/uploads/2019/03/recycle-desktop-icon@2x-1.png" alt="" />
-					            </div>
-					            <div class="col-md-1"></div>
-					            <div class="col-md-5">
-					                <h2>Continuously Improve Alert Quality </h2>
-					                <p>Threat Stack lets you respond to alerts and change alert rules in your third-party incident response tool, so the Threat Stack Cloud Security Platform gets smarter and more accurate as you use it.  </p>
-					                <a href="https://www.threatstack.com/integrations" target="" class="blockcta">
-					                	<span class="blockcta-asset">
-					                    	<i class="fas fa-search"></i>
-					                    </span>
-					                    <span class="blockcta-text">
-					                    	See Our Incident Response Partners
-					                    </span>
-					                </a>
-					            </div>
-					        </div>
-					    </div>
-					</div> -->
+				</div>
 			</div>
 		</div><!-- #content -->
 
@@ -522,6 +463,30 @@
 			</div>
 		</div>
 
+		<!-- Lightb0x Popup on mouse exit of browser window -->
+		<div class="lightbox" id="text">
+		    <div class="col-sm-12">
+		    	<div class="box">
+		    	    <a class="close" href="#">x</a>
+		    	    <!-- your title -->
+		    	    <div class="content">
+		    	    	<h3 class="title">Didn't Find What You Were Looking For?</h3>
+		    	    	<h5>Maybe Consider These:</h5>
+		    	    	<div class="hero-buttons">
+			          		<a href="https://www.threatstack.com/platform" target="" class="secondary-button hero-button hero__button">See the Platform</a>
+		                </div>
+		    	    	<div class="hero-buttons">
+			          		<a href="https://resources.threatstack.com/datasheets/data-portability" target="" class="secondary-button hero-button hero__button">Check Out the API</a>
+		                </div>
+		                <div class="hero-buttons">
+			          		<a href="https://www.threatstack.com/integrations" target="" class="secondary-button hero-button hero__button">Meet Our Partners</a>
+		                </div>
+		    	    </div>
+		    	</div>
+		    </div>
+		</div>
+		<div class="lightbox-backdrop"></div>
+
 		<div id="trial-popup" class="popup" displayed="false" style="display: none;"><!-- Modal content -->
 			<div class="popup-content"><span class="close" data-dismiss="modal">×</span>
 				<div class="popup-body">
@@ -560,6 +525,41 @@
 	<script type='text/javascript' src='https://www.threatstack.com/wp-content/themes/twentyseventeen/assets/js/global.js?ver=1.0'></script>
 	<script type='text/javascript' src='https://www.threatstack.com/wp-content/themes/twentyseventeen/assets/js/jquery.scrollTo.js?ver=2.1.2'></script>
 	<script type='text/javascript' src='https://www.threatstack.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+	
+	<!-- Script for Lightbox popup on mouse exit of browser window -->
+	<script>
+		var $ = jQuery;
+		// Exit intent
+		function addEvent(obj, evt, fn) {
+		    if (obj.addEventListener) {
+		        obj.addEventListener(evt, fn, false);
+		    }
+		    else if (obj.attachEvent) {
+		        obj.attachEvent("on" + evt, fn);
+		    }
+		}
+
+		// Exit intent trigger
+		addEvent(document, 'mouseout', function(evt) {
+
+
+		    if (evt.toElement == null && evt.relatedTarget == null ) {
+                if(sessionStorage && !sessionStorage.getItem('isshow')){
+                	$('.lightbox').slideDown();
+        	        $('.lightbox-backdrop').css({'display': 'block'});
+                    sessionStorage.setItem('isshow', true);
+                }
+		    };
+
+		});
+
+		// Closing the Popup Box
+		$('a.close').click(function(){
+		    $('.lightbox').slideUp();
+		    $('.lightbox-backdrop').css({'display': 'none'});
+		});
+	</script>
+
 	<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<defs>
 	<symbol id="icon-behance" viewBox="0 0 37 32">
