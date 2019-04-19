@@ -1,7 +1,7 @@
 
 .hero__new {
 	padding: 30px 0;
-	background: radial-gradient(circle at left, rgba(126, 62, 179, 0.5), transparent 360px), radial-gradient(circle at right, rgba(126, 62, 179, 0.5), transparent 243px), radial-gradient(at bottom right, #5c448f, #172953 690px);
+	background: radial-gradient(circle at left, rgba(126, 62, 179, 0.5), transparent 360px), radial-gradient(circle at right, rgba(126, 62, 179, 0.5), transparent 243px), no-repeat top 25px center/100% url("resourcebackground.png"), radial-gradient(at bottom right, #5c448f, #172953 690px);
 	color: #fff;
 }
 
@@ -58,6 +58,10 @@
 	max-height: 115px;
 }
 
+.item__image {
+	max-height: 115px;
+}
+
 .item__title {
 	margin-top: -30px;
 	background: #fff;
@@ -75,6 +79,49 @@
     background-size:5px 100%;
     background-position:0 0, 100% 0;
     background-repeat:no-repeat;
+}
+
+.grid__item {
+	background-size: cover;
+	background-position: center center; 
+	height: 33.333vh;
+	min-height: 350px;
+    position: relative;
+    padding: 0 5%;
+}
+
+.grid__item:hover {
+	-webkit-box-shadow: inset 2px -19px 122px -85px rgba(255,255,255,1);
+	-moz-box-shadow: inset 2px -19px 122px -85px rgba(255,255,255,1);
+	box-shadow: inset 2px -19px 122px -85px rgba(255,255,255,1);
+}
+
+.grid-content {
+	text-align: center;
+	padding: 30px 10px 0 10px;
+}
+
+.grid-item__title,
+.grid-item__desc {
+	color: white;
+}
+
+.grid__button {
+	width: auto;
+	border-radius: 25px;
+    background: #dfe9f6;
+    border: 2px solid #dfe9f6;
+    display: block;
+    padding: 0px;
+}
+
+.grid__button-asset {
+	display: inline-block;
+    margin-bottom: 0;
+}
+
+.blockcta-asset {
+	margin-right: 0;
 }
 
 
